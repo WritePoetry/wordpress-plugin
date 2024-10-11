@@ -15,6 +15,7 @@
 		"uninstall.php"
 	],
 	"dependencies": {
+		"@10up/block-components": "^1.19.3",
 		"@wordpress/api-fetch": "^7.9.0",
 		"@wordpress/components": "^28.9.0",
 		"@wordpress/core-data": "^7.9.0",
