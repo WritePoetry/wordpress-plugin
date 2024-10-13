@@ -30,11 +30,9 @@ import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
 
 /**
  * Imports the useEffect React Hook. This is used to set an attribute when the
- * block is loaded in the Editor.
  *
- * @see https://react.dev/reference/react/useEffect
  */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -49,52 +47,75 @@ import { useEffect } from 'react';
  * @return {Element} Element to render.
  */
 export default function Edit( { attributes, setAttributes } ) {
-	const { fallbackCurrentYear, showStartingYear, startingYear, apiUrl } =
-		attributes;
+	const { url, text, link } = attributes;
 
-	// Get the current year and make sure it's a string.
-	const currentYear = new Date().getFullYear().toString();
+	const [ fetchedData, setFetchedData ] = useState( null );
+    const [ errorMessage, setErrorMessage ] = useState( '' );
 
-	// When the block loads, set the fallbackCurrentYear attribute to the
-	// current year if it's not already set.
-	useEffect( () => {
-		if ( currentYear !== fallbackCurrentYear ) {
-			setAttributes( { fallbackCurrentYear: currentYear } );
-		}
-	}, [ currentYear, fallbackCurrentYear, setAttributes ] );
+    useEffect( () => {
+		// Validate that the required data attributes are present.
+        if ( url ) {
+			// Fetch data from the API.
+            fetch(url)
+                .then( ( response ) => {
+                    if ( ! response.ok ) {
+                        throw new Error(`Error fetching data: ${response.status}`);
+                    }
+                    return response.json();
+                } )
+                .then( ( data ) => {
+                    setFetchedData( data );
+                } )
+                .catch( (error) => {
+                    console.error( error );
+                    setErrorMessage( 'Failed to fetch data' );
+                } );
+        }
+    }, [url] );
 
-	let displayDate;
-
-	// Display the starting year as well if supplied by the user.
-	if ( showStartingYear && startingYear ) {
-		displayDate = startingYear + '–' + currentYear;
-	} else {
-		displayDate = currentYear;
-	}
 
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody title={ __( 'Settings', 'write-poetry' ) }>
-					<ToggleControl
-						checked={ showStartingYear }
-						label={ __( 'Show starting year', 'write-poetry' ) }
-						onChange={ () =>
-							setAttributes( {
-								showStartingYear: ! showStartingYear,
-							} )
+					<TextControl
+						label={ __( 'API url', 'write-poetry' ) }
+						value={ url }
+						onChange={ ( value ) =>
+							setAttributes( { url: value } )
 						}
 					/>
 					<TextControl
-						label={ __( 'Api url', 'write-poetry' ) }
-						value={ apiUrl }
+						label={ __( 'Link selector', 'write-poetry' ) }
+						value={ link }
 						onChange={ ( value ) =>
-							setAttributes( { apiUrl: value } )
+							setAttributes( { link: value } )
+						}
+					/>
+					<TextControl
+						label={ __( 'Text selector', 'write-poetry' ) }
+						value={ text }
+						onChange={ ( value ) =>
+							setAttributes( { text: value } )
 						}
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<p { ...useBlockProps() }>© { displayDate }</p>
+
+			<span { ...useBlockProps() }>
+				{ errorMessage ? (
+					<p>{ errorMessage }</p>
+				) : fetchedData ? (
+					<a href={ fetchedData[link] }>{ fetchedData[text] }</a>
+				) : (
+					<p>Loading data...</p>
+				) }
+			</span>
 		</>
 	);
 }
+
+
+//   https://api.github.com/repos/WritePoetry/wordpress-plugin/releases/latest"
+//   data-api-link="html_url"
+//   data-api-text="tag_name"

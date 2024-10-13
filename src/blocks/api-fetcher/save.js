@@ -1,3 +1,5 @@
+import { __ } from '@wordpress/i18n';
+
 /**
  * React hook that is used to mark the block wrapper element.
  * It provides all the necessary props like the class name.
@@ -19,18 +21,16 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save( { attributes } ) {
-	const { fallbackCurrentYear, apiUrl } = attributes;
+	const { url, link, text } = attributes;
 
-	// If there is no fallbackCurrentYear, which could happen if the block
-	// is loaded from a template/pattern, return null. In this case, block
-	// rendering will be handled by the render.php file.
-	if ( ! fallbackCurrentYear ) {
-		return null;
-	}
-
-	if ( ! apiUrl ) {
-		return null;
-	}
-
-	return <p { ...useBlockProps.save() }>© { apiUrl }</p>;
+	return (
+		<span
+			data-url={ url }
+			data-link={ link }
+			data-text={ text }
+			{ ...useBlockProps.save() }
+		>
+			{ __( 'Fetching data…', 'write-poetry' ) }
+		</span>
+	);
 }

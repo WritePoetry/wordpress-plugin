@@ -11,7 +11,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import Edit from './edit';
 import save from './save';
 import metadata from './block.json';
-import { calendarIcon } from '../../packages/icons';
+import { graphicBracketsIcon } from '../../packages/icons';
 
 /**
  * Every block starts by registering a new block type definition.
@@ -19,7 +19,7 @@ import { calendarIcon } from '../../packages/icons';
  * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
  */
 registerBlockType( metadata.name, {
-	icon: calendarIcon,
+	icon: graphicBracketsIcon,
 	/**
 	 * @see ./edit.js
 	 */
@@ -35,9 +35,9 @@ registerBlockType( metadata.name, {
 	 * @return {{'data-url': *}}
 	 */
 	getEditWrapperProps( attributes ) {
-		const { apiUrl } = attributes;
-		if ( undefined !== apiUrl ) {
-			return { 'data-url': apiUrl };
+		const { url } = attributes;
+		if ( undefined !== url ) {
+			return { 'data-url': url };
 		}
 	},
 } );
