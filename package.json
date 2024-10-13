@@ -1,5 +1,5 @@
 {
-	"name": "write-poetry",
+	"name": "writepoetry-plugin",
 	"description": "Example block scaffolded with Create Block tool.",
 	"author": "Giacomo Secchi",
 	"license": "GPL-2.0-or-later",

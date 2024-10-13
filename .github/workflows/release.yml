@@ -69,9 +69,15 @@ jobs:
         with:
           name: build-output
           path: build
+
+      - name: Read package.json
+        run: |
+          echo "PACKAGE_NAME=$(jq -r .name package.json)" >> $GITHUB_ENV
+
       - name: Composer install
         run: |
           composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
       - name: Zip Release Asset
         run: |
           npm install
@@ -83,7 +89,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            ${{ github.event.repository.name}}.zip
+            ${{ env.PACKAGE_NAME }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
