@@ -2,8 +2,8 @@
 
 ![Banner](assets/banner-772x250.png)
 
-![Release](https://github.com/giacomo-secchi/write-poetry/actions/workflows/release.yml/badge.svg)
-[![WordPress Plugin Download](https://img.shields.io/badge/Download-write--poetry.zip-FA6900)](https://github.com/giacomo-secchi/write-poetry/releases/latest/download/write-poetry.zip)
+![Release](https://github.com/WritePoetry/wordpress-plugin/actions/workflows/release.yml/badge.svg)
+[![WordPress Plugin Download](https://img.shields.io/badge/Download-write--poetry.zip-FA6900)](https://github.com/WritePoetry/wordpress-plugin/releases/latest/download/write-poetry.zip)
 
 
 Welcome to the WritePoetry Repo on GitHub. Here you can find the source code used in the development of the WritePoetry plugin. You can browse the source, look at open issues, contribute code, and keep tracking of ongoing development.
@@ -30,7 +30,7 @@ Once you've installed all of the prerequisites, you can run the following comman
 
 ```bash
 # Clone the project repository including nested submodules
-git clone --recurse-submodules https://github.com/giacomo-secchi/write-poetry
+git clone --recurse-submodules https://github.com/WritePoetry/wordpress-plugin
 # Ensure that you're using the correct version of Node
 nvm use
 # Install the Node.js packages and dependencies

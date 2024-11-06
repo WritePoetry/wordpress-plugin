@@ -38,7 +38,7 @@ you put the stable version, in order to eliminate any doubt.
 
 == Installation ==
 
-1. Download the latest release `write-poetry.zip` archive from the [GitHub WritePoetry Repo release page](https://github.com/giacomo-secchi/write-poetry/releases/latest)
+1. Download the latest release `write-poetry.zip` archive from the [GitHub WritePoetry Repo release page](https://github.com/WritePoetry/wordpress-plugin/releases/latest)
 2. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
 3. Activate the plugin through the 'Plugins' menu in WordPress
 

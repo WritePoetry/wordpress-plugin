@@ -9,7 +9,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Write Poetry
- * Plugin URI:        https://github.com/giacomo-secchi/write-poetry
+ * Plugin URI:        https://github.com/WritePoetry/wordpress-plugin
  * Description:       The Swiss knife plugin designed for developers and advanced users. Unlock the full potential of WordPress with this versatile tool. Empower your workflow without getting your hands dirty.
  * Version:           0.3.8
  * Requires at least: 5.9
@@ -19,7 +19,7 @@
  * Text Domain:       write-poetry
  * License:           GPL v2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Update URI:        https://github.com/giacomo-secchi/write-poetry/
+ * Update URI:        https://github.com/WritePoetry/wordpress-plugin/
  */
 
 // If this file is called directly, abort.
