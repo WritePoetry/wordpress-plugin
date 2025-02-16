@@ -55,7 +55,7 @@ class Testiomnial extends Base_Controller {
 
 			foreach ( $spans as $span ) {
 				// Find all tag with <a> inside the span.
-				$links = $span->getElementsByTagName('a');
+				$links = $span->getElementsByTagName('a' );
 				while ( $links->length > 0 ) {
 					$link = $links->item( 0 );
 
@@ -65,9 +65,24 @@ class Testiomnial extends Base_Controller {
 				}
 			}
 
+			// Find all <a> tags with CSS class "testimonial-featured-image"
+			$image_links = $xpath->query( '//a[contains(@class, "testimonial-featured-image")]' );
+
+			foreach ( $image_links as $image_link ) {
+				// Find the <img> tag inside the <a> tag.
+				$images = $image_link->getElementsByTagName( 'img' );
+				if ( $images->length > 0 ) {
+					$img = $images->item( 0 );
+
+					// Replace the <a> tag with the <img> tag.
+					$image_link->parentNode->replaceChild( $img, $image_link );
+				}
+			}
+
 			// Save modified HTML.
 			$block_content = $dom->saveHTML();
 		}
+
 
 		return $block_content;
 	}
