@@ -47,6 +47,8 @@ class Maintenance_Mode extends Base_Controller {
 	public function check_excluded_pages() {
 		global $post;
 
+		$current_page = '';
+
 		if ( ! empty( $post->post_name ) ) {
 			$current_page = $post->post_name;
 		}
