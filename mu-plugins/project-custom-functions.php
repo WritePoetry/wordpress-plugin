@@ -34,6 +34,9 @@ define( 'GTM4WP_HARDCODED_GTM_ENV_PREVIEW', '' );
 // Remove version query string from static CSS files.
 add_filter( 'writepoetry_remove_query_strings', '__return_true' );
 
+// If enabled, this will remove the link to the single testimonial page in Jetpack testimonials.
+add_filter( 'writepoetry_plugin_remove_testimonial_link', '__return_true' );
+
 // Enable maintenance mode.
 add_filter(
 	'pre_option_writepoetry_maintenance_mode',
