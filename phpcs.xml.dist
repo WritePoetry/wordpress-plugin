@@ -36,8 +36,8 @@
 	<exclude-pattern>/build/*</exclude-pattern>
 
 	<!-- Exclude the WriteWhite Theme directory. -->
-	<exclude-pattern>/themes/write-white/*</exclude-pattern>
-	
+	<exclude-pattern>/themes/blankspace/*</exclude-pattern>
+
 	<!-- Strip the filepaths down to the relevant bit. -->
 	<arg name="basepath" value="."/>
 
