@@ -69,14 +69,12 @@ final class Init {
 			);
 		}
 
-		if ( \is_plugin_active( 'wordpress-seo/wp-seo.php' ) ) {
-
-
-			array_push(
-				$services,
-				Plugins\Yoast\Sitemap::class,
-			);
-		}
+		// if ( \is_plugin_active( 'wordpress-seo/wp-seo.php' ) ) {
+		// 	array_push(
+		// 		$services,
+		// 		Plugins\Yoast\Sitemap::class,
+		// 	);
+		// }
 
 		if ( Base_Controller::is_woocommerce_activated() ) {
 			array_push(
