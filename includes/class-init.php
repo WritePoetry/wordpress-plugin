@@ -40,8 +40,7 @@ final class Init {
 			FSE\Shortcode::class,
 			FSE\Theme\Assets::class,
 			Pages\Admin\Login_Screen::class,
-			Plugins\Jetpack\Portfolio::class,
-			Plugins\Jetpack\Testiomnial::class,
+
 			// @phpcs:disable Squiz.PHP.CommentedOutCode.Found, Squiz.Commenting.InlineComment.InvalidEndChar
 			// Base\Development\Example::class,
 			// Plugins\Gtm4wp::class,
@@ -56,6 +55,26 @@ final class Init {
 				Pages\Admin\Custom_Media_Type::class,
 				Pages\Admin\Settings_Link::class,
 				Pages\Admin\WooCommerce_Page::class,
+			);
+		}
+
+		include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+
+		if ( \is_plugin_active( 'jetpack/jetpack.php' ) ) {
+			array_push(
+				$services,
+				Plugins\Jetpack\Portfolio::class,
+				Plugins\Jetpack\Testiomnial::class,
+			);
+		}
+
+		if ( \is_plugin_active( 'wordpress-seo/wp-seo.php' ) ) {
+
+
+			array_push(
+				$services,
+				Plugins\Yoast\Sitemap::class,
 			);
 		}
 
