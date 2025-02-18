@@ -20,7 +20,7 @@ use WritePoetry\Api\Register_Custom_Fields;
  *
  * @package WritePoetry\Plugins\Jetpack
  */
-class Testiomnial extends Base_Controller {
+class Testimonial extends Base_Controller {
 	/**
 	 * Invoke hooks.
 	 *

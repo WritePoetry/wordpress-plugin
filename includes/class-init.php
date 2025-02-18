@@ -15,6 +15,8 @@ namespace WritePoetry;
 use WritePoetry\Api\Plugin_Config;
 use WritePoetry\Base\Base_Controller;
 
+include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
 
 /**
  * Main Init class
@@ -58,34 +60,38 @@ final class Init {
 			);
 		}
 
-		include_once ABSPATH . 'wp-admin/includes/plugin.php';
-
-
-		if ( \is_plugin_active( 'jetpack/jetpack.php' ) ) {
-			array_push(
-				$services,
-				Plugins\Jetpack\Portfolio::class,
-				Plugins\Jetpack\Testiomnial::class,
-			);
-		}
-
-		// if ( \is_plugin_active( 'wordpress-seo/wp-seo.php' ) ) {
-		// 	array_push(
-		// 		$services,
-		// 		Plugins\Yoast\Sitemap::class,
-		// 	);
-		// }
-
-		if ( Base_Controller::is_woocommerce_activated() ) {
-			array_push(
-				$services,
+		self::add_plugin_service( $services,
+			'woocommerce/woocommerce.php',
+			array(
 				Plugins\WooCommerce\Cart_Redirect::class,
 				Plugins\WooCommerce\Product_Zoom::class,
 				Plugins\WooCommerce\Product_Additional_Infos::class,
 				Plugins\WooCommerce\Quantity_Layout::class,
 				Plugins\WooCommerce\WooCommerce_Controller::class
-			);
-		}
+			)
+		);
+
+		self::add_plugin_service( $services,
+			'jetpack/jetpack.php',
+			array(
+				Plugins\Jetpack\Portfolio::class,
+				Plugins\Jetpack\Testimonial::class
+			)
+		);
+
+		self::add_plugin_service( $services,
+			'wordpress-seo/wp-seo.php',
+			array(
+				Plugins\Yoast\Sitemap::class
+			)
+		);
+
+		self::add_plugin_service( $services,
+			'translatepress-multilingual/index.php',
+			array(
+				Plugins\Translatepress\Translatepress::class
+			)
+		);
 
 		return $services;
 	}
@@ -115,5 +121,20 @@ final class Init {
 		$service = new $class_name();
 
 		return $service;
+	}
+
+	/**
+	 * Add a service if the plugin is active
+	 *
+	 * @param array  &$services     The array of services to modify.
+	 * @param string $plugin        The plugin to check.
+	 * @param string $service_class The service class to add.
+	 */
+	public static function add_plugin_service( &$services, $plugin, $service_classes ) {
+		if ( \is_plugin_active( $plugin ) ) {
+			foreach ( $service_classes as $service_class ) {
+				array_push( $services, $service_class );
+			}
+		}
 	}
 }

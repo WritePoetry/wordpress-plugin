@@ -26,4 +26,5 @@ class Sitemap extends Base_Controller {
 	 * @return void
 	 */
 	public function register() {}
+
 }

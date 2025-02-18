@@ -132,6 +132,18 @@ add_filter(
 	1
 );
 
+add_filter(
+	'writepoetry_plugin_remove_trp_end_slash_from_links',
+	function () {
+		$string = array(
+			'example-url',
+		);
+
+		return $string;
+	},
+	10,
+	3
+);
 
 // Add parameters to url.
 add_filter(
