@@ -68,7 +68,7 @@ class Portfolio extends Base_Controller {
 		);
 
 		wp_enqueue_script(
-			"{$this->prefix}-gutenberg-sidebar",
+			"writepoetry-gutenberg-sidebar",
 			sprintf( '%s/%s.js', $this->build_url, $file_name ),
 			$asset_file['dependencies'],
 			$asset_file['version'],
@@ -88,15 +88,15 @@ class Portfolio extends Base_Controller {
 		);
 
 		$meta_fields = array(
-			"{$this->prefix}_project_url" =>  $default_args,
-			"{$this->prefix}_project_year" => array(
+			"writepoetry_project_url" =>  $default_args,
+			"writepoetry_project_year" => array(
 				'type' => 'number',
 				'default' => date( 'Y' ),
 				'description' =>  'Year of the project',
 			),
-			"{$this->prefix}_project_client" =>  $default_args,
-			"{$this->prefix}_project_expertise" =>  $default_args,
-			"{$this->prefix}_project_industry" =>  $default_args
+			"writepoetry_project_client" =>  $default_args,
+			"writepoetry_project_expertise" =>  $default_args,
+			"writepoetry_project_industry" =>  $default_args
 		);
 
 		// Register custom fields for the portfolio post type.
@@ -112,9 +112,9 @@ class Portfolio extends Base_Controller {
 	 */
 	public function add_portfolio_meta_box() {
 		add_meta_box(
-			"{$this->prefix}_post_options_metabox",
+			"writepoetry_post_options_metabox",
 			'Post Options',
-			"{$this->prefix}_post_options_metabox_html",
+			"writepoetry_post_options_metabox_html",
 			self::CUSTOM_POST_TYPE,
 			'normal',
 			'default',
