@@ -30,7 +30,7 @@
 		"swiper": "^11.1.4"
 	},
 	"devDependencies": {
-		"@wordpress/env": "^10.9.0",
+		"@wordpress/env": "^10.23.0",
 		"@wordpress/scripts": "^30.1.0"
 	},
 	"prettier": "@wordpress/prettier-config",
@@ -39,7 +39,8 @@
 		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses",
 		"composer": "wp-env run cli --env-cwd=wp-content/plugins/wordpress-plugin composer",
-		"env:start": "wp-env start && (npm run start)",
+		"composer:install": "npm run composer install -- --no-dev --no-interaction --prefer-dist --optimize-autoloader",
+		"env:start": "wp-env start && npm run composer:install && (npm run start)",
 		"env:start:debug": "wp-env start --xdebug",
 		"env:stop": "wp-env stop",
 		"format": "wp-scripts format",
