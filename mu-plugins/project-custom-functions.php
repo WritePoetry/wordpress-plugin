@@ -152,8 +152,26 @@ add_filter(
 		// Test here http://localhost:8888/sample-page/?test-param=ciao&test-param2=caro.
 		return array( 'test-param', 'test-param2' );
 	}
+)
+
+// Remove posts from sitemaps.
+add_filter(
+	'writepoetry_exclude_posts_from_xml_sitemaps',
+	function () {
+		return array( 
+			'jetpack-portfolio',
+			'test-cpt',
+			'another-cpt'
+			);
+	}
 );
 
+add_filter(
+	'writepoetry_redirect_to_not_found',
+	function () {
+		return array( 'jetpack-portfolio', 'test-cpt' );
+	}
+);
 
 
 add_filter(
