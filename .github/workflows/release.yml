@@ -1,5 +1,5 @@
 name: Create Release
-run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
+run-name: New release from tag ${{ github.ref_name }} by @${{ github.actor }}
 
 on:
   push:
