@@ -49,6 +49,12 @@ class Portfolio extends Base_Controller {
 				$this->register_portfolio_meta();
 			}
 		);
+
+		// Force the Portfolios CPT settings to remain visible.
+		// https://jetpack.com/support/custom-content-types/#block-themes-and-custom-content-types
+		add_filter( 'classic_theme_helper_should_display_portfolios', function( $should_display ) {
+			return true;
+		} );
 	}
 
 

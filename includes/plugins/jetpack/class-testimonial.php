@@ -30,6 +30,12 @@ class Testimonial extends Base_Controller {
 		if ( apply_filters( "writepoetry_plugin_remove_testimonial_link", false ) ) {
 			add_filter( 'render_block_core/shortcode', array( $this, 'remove_dom_testimonial_link' ), 10, 2 );
 		}
+
+		// Force the Testimonials CPT settings to remain visible.
+		// https://jetpack.com/support/custom-content-types/#block-themes-and-custom-content-types
+		add_filter( 'classic_theme_helper_should_display_testimonials', function( $should_display ) {
+			return true;
+		} );
 	}
 
 	/**
