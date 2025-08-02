@@ -15,19 +15,19 @@
 		"uninstall.php"
 	],
 	"dependencies": {
-		"@10up/block-components": "^1.19.3",
-		"@wordpress/api-fetch": "^7.9.0",
-		"@wordpress/components": "^28.9.0",
-		"@wordpress/core-data": "^7.9.0",
-		"@wordpress/data": "^10.9.0",
-		"@wordpress/date": "^5.9.0",
-		"@wordpress/edit-post": "^8.9.0",
-		"@wordpress/i18n": "^5.9.0",
-		"@wordpress/icons": "^10.9.0",
-		"@wordpress/plugins": "^7.9.0",
+		"@10up/block-components": "^1.21.3",
+		"@wordpress/api-fetch": "^7.27.0",
+		"@wordpress/components": "^30.0.0",
+		"@wordpress/core-data": "^7.27.0",
+		"@wordpress/data": "^10.27.0",
+		"@wordpress/date": "^5.27.0",
+		"@wordpress/edit-post": "^8.27.0",
+		"@wordpress/i18n": "^6.0.0",
+		"@wordpress/icons": "^10.27.0",
+		"@wordpress/plugins": "^7.27.0",
 		"animate.css": "^4.1.1",
 		"classnames": "^2.5.1",
-		"swiper": "^11.1.4"
+		"swiper": "^11.2.10"
 	},
 	"devDependencies": {
 		"@wordpress/env": "^10.23.0",
@@ -53,7 +53,7 @@
 		"plugin-zip": "wp-scripts plugin-zip",
 		"start": "wp-scripts start --webpack-copy-php",
 		"start:hot": "wp-scripts start --hot",
-		"test:unit": "wp-env run tests-cli --env-cwd=wp-content/plugins/write-poetry ./vendor/bin/phpunit",
+		"test:unit": "wp-env run tests-cli --env-cwd=wp-content/plugins/wordpress-plugin ./vendor/bin/phpunit",
 		"wp-env": "wp-env"
 	},
 	"npmpackagejsonlint": {
@@ -65,5 +65,9 @@
 			"require-repository": "off",
 			"require-version": "off"
 		}
+	},
+	"engines": {
+		"node": "22.18.0",
+		"npm": "10.9.3"
 	}
 }
