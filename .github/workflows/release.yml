@@ -84,7 +84,7 @@ jobs:
           npm install
           npm run plugin-zip
           mv "$PACKAGE_NAME"{.zip,"-$VERSION.zip"}
-          echo "zip_path=$PACKAGE_NAME-$VERSION.zip" >> $GITHUB_OUTPUT
+          echo "zip_path=$PACKAGE_NAME-$VERSION" >> $GITHUB_OUTPUT
         working-directory: ${{ github.workspace }}
 
       - name: Create Release
