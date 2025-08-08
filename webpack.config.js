@@ -8,7 +8,7 @@ const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 module.exports = {
 	...defaultConfig,
 	entry: {
-		...defaultConfig.entry(),
+		...defaultConfig.entry,
 		'plugin-jetpack': `./src/plugins/jetpack`,
 		popup: `./src/extensions/buttons/index.js`,
 	},
