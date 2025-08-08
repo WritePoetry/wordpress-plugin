@@ -152,7 +152,7 @@ add_filter(
 		// Test here http://localhost:8888/sample-page/?test-param=ciao&test-param2=caro.
 		return array( 'test-param', 'test-param2' );
 	}
-)
+);
 
 // Remove posts from sitemaps.
 add_filter(

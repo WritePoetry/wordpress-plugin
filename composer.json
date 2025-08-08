@@ -4,7 +4,8 @@
 	"type": "wordpress-plugin",
 	"description": "The Swiss knife plugin designed for developers and advanced users. Unlock the full potential of WordPress with this versatile tool. Empower your workflow without getting your hands dirty.",
 	"require": {
-		"yoast/wp-test-utils": "^1.1"
+		"yoast/wp-test-utils": "^1.1",
+		"afragen/git-updater-lite": "^2.3"
 	},
 	"license": "GPL-2.0-or-later",
 	"autoload": {
