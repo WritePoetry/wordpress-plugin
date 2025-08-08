@@ -68,10 +68,6 @@ jobs:
           name: build-output
           path: build
 
-      - name: Read package.json
-        run: |
-          echo "PACKAGE_NAME=$(jq -r .name package.json)" >> $GITHUB_ENV
-
       - name: Composer install
         run: |
           composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
