@@ -11,7 +11,7 @@
  * Plugin Name:       WritePoetry
  * Plugin URI:        https://github.com/WritePoetry/writepoetry-plugin
  * Description:       The Swiss knife plugin designed for developers and advanced users. Unlock the full potential of WordPress with this versatile tool. Empower your workflow without getting your hands dirty.
- * Version:           0.3.19
+ * Version:           0.3.20
  * Requires at least: 5.9
  * Requires PHP:      7.2
  * Author:            Giacomo Secchi
@@ -21,6 +21,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Update URI:        https://github.com/WritePoetry/writepoetry-plugin/
  * GitHub Plugin URI: https://github.com/WritePoetry/writepoetry-plugin
+ * Primary Branch:    trunk
  * Release Asset:     true
  * Update URI: 		  https://write-poetry.com
  */
