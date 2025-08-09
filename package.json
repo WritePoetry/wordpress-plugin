@@ -38,7 +38,7 @@
 		"build": "wp-scripts build --webpack-copy-php",
 		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses",
-		"composer": "wp-env run cli --env-cwd=wp-content/plugins/wordpress-plugin composer",
+		"composer": "wp-env run cli --env-cwd=wp-content/plugins/writepoetry-plugin composer",
 		"composer:install": "npm run composer install -- --no-dev --no-interaction --prefer-dist --optimize-autoloader",
 		"env:start": "wp-env start && npm run composer:install && (npm run start)",
 		"env:start:debug": "wp-env start --xdebug",
@@ -53,7 +53,7 @@
 		"plugin-zip": "wp-scripts plugin-zip",
 		"start": "wp-scripts start --webpack-copy-php",
 		"start:hot": "wp-scripts start --hot",
-		"test:unit": "wp-env run tests-cli --env-cwd=wp-content/plugins/wordpress-plugin ./vendor/bin/phpunit",
+		"test:unit": "wp-env run tests-cli --env-cwd=wp-content/plugins/writepoetry-plugin ./vendor/bin/phpunit",
 		"wp-env": "wp-env"
 	},
 	"npmpackagejsonlint": {

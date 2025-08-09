@@ -1,9 +1,9 @@
-# Write Poetry WordPress Plugin
+# WritePoetry WordPress Plugin
 
 ![Banner](assets/banner-772x250.png)
 
-![Release](https://github.com/WritePoetry/wordpress-plugin/actions/workflows/release.yml/badge.svg)
-[![WordPress Plugin Download](https://img.shields.io/badge/Download-write--poetry.zip-FA6900)](https://github.com/WritePoetry/wordpress-plugin/releases/latest/download/write-poetry.zip)
+![Release](https://github.com/WritePoetry/writepoetry-plugin/actions/workflows/release.yml/badge.svg)
+[![WordPress Plugin Download](https://img.shields.io/badge/Download-write--poetry.zip-FA6900)](https://github.com/WritePoetry/writepoetry-plugin/releases/latest/download/write-poetry.zip)
 
 
 Welcome to the WritePoetry Repo on GitHub. Here you can find the source code used in the development of the WritePoetry plugin. You can browse the source, look at open issues, contribute code, and keep tracking of ongoing development.
@@ -23,14 +23,14 @@ To get up and running within the WritePoetry Repo, you will need to make sure th
 > The steps are:
 > - Install [Local WP](https://localwp.com/help-docs/getting-started/installing-local/).
 > - Create a new website project in Local.
-> - Clone the Write Poetry Plugin from GitHub directly into the `wp-content/plugins/` folder of the newly created project.
+> - Clone the WritePoetry Plugin from GitHub directly into the `wp-content/plugins/` folder of the newly created project.
 > - Click on 'Start site' button and you are ready to go!
 
 Once you've installed all of the prerequisites, you can run the following commands to get everything working.
 
 ```bash
 # Clone the project repository including nested submodules
-git clone --recurse-submodules https://github.com/WritePoetry/wordpress-plugin
+git clone --recurse-submodules https://github.com/WritePoetry/writepoetry-plugin
 # Install the Node.js packages and dependencies
 npm install
 # Start the local environment
@@ -64,11 +64,6 @@ Remember that the `pathMappings` inside `.vscode/launch.json` file should be as 
 }
 ```
 
-
-Contributing to WooCommerce
-If you have a patch or have stumbled upon an issue with WooCommerce core, you can contribute this back to the code. Please read our contributor guidelines for more information on how you can do this.
-
 ## Contributing to WritePoetry
-
-Please read this plugin [contributor guidelines](CONTRIBUTING.md) for more information on how you can do this.
+If you have a patch or have stumbled upon an issue with WritePoetry plugin, you can contribute this back to the code. Please read this plugin [contributor guidelines](CONTRIBUTING.md) for more information on how you can do this.
 

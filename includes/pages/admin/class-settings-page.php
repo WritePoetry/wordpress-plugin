@@ -84,8 +84,8 @@ class Settings_Page extends Admin_Controller implements Settings_Interface {
 	 * Add options page
 	 */
 	public function adminMenu() {
-		$page_title = __( 'Write Poetry', 'write-poetry' );
-		$menu_title = __( 'Write Poetry', 'write-poetry' );
+		$page_title = __( 'WritePoetry', 'write-poetry' );
+		$menu_title = __( 'WritePoetry', 'write-poetry' );
 		$capability = 'manage_options';
 		$menu_slug  = $this->page_slug;
 		$callback   = array( $this, 'display' );

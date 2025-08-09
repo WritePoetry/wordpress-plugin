@@ -105,7 +105,7 @@ class Plugin_Config {
 		$this->plugin_main_file = wp_normalize_path( $this->plugin_path . 'write-poetry.php' );
 		$this->prefix           = preg_replace( '/[^A-Za-z0-9 ]/', '', plugin_basename( $this->plugin_path ) );
 		$this->github_username  = 'WritePoetry';
-		$this->github_repo      = 'wordpress-plugin';
+		$this->github_repo      = 'writepoetry-plugin';
 		$this->authorize        = 'abcdefghijk1234567890';
 	}
 

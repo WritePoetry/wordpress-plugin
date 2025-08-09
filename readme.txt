@@ -1,4 +1,4 @@
-=== Write Poetry ===
+=== WritePoetry ===
 Contributors: giacomosecchi
 Donate link: https://example.com/
 Tags: comments, spam
@@ -13,17 +13,17 @@ The Swiss knife plugin designed for developers and advanced users. Unlock the fu
 
 == Description ==
 
-Welcome to the Write Poetry WordPress Plugin, a versatile tool meticulously crafted for developers and advanced users who seek to elevate their website development experience. Embrace a world of enhanced functionalities and seamless integration with popular plugins like WooCommerce and Jetpack. Write Poetry is your secret weapon to amplify your WordPress capabilities without the hassle of intricate coding.
+Welcome to the WritePoetry WordPress Plugin, a versatile tool meticulously crafted for developers and advanced users who seek to elevate their website development experience. Embrace a world of enhanced functionalities and seamless integration with popular plugins like WooCommerce and Jetpack. WritePoetry is your secret weapon to amplify your WordPress capabilities without the hassle of intricate coding.
 
-Write Poetry is designed with developers and advanced users in mind. It acts as a bridge, providing a seamless way to extend the functionalities of official WordPress plugins such as WooCommerce, Jetpack, and more. With Write Poetry, you can tap into the potential of these plugins without having to dive into complex code, saving you time and effort.
+WritePoetry is designed with developers and advanced users in mind. It acts as a bridge, providing a seamless way to extend the functionalities of official WordPress plugins such as WooCommerce, Jetpack, and more. With WritePoetry, you can tap into the potential of these plugins without having to dive into complex code, saving you time and effort.
 
-Major features in Write Poetry include:
+Major features in WritePoetry include:
 
 *   Load styles and scripts assets from your theme without using code (only configurations in the dedicated file `write-poetry-theme.json`).
 *   Add multipe Query Vars via `writepoetry_query_vars`.
 *	When you enable this plugin is adds by default: SVG, ttf, woff and woff2 mime types; In this way you can quickly add vectors and fonts to WordPress Media Library.
 	If you want to disable this behaviour you can just remove the unwanted mime types using the `upload_mimes` and `mime_types` filters. [Here an example](https://github.com/giacomo-secchi/write-poetry/blob/de14197dfd774608425b648c0075adf285ba1396/themes/twentytwenty-child/functions.php#L22).
-*	Enhanced maintenance mode that keeps the admin alive. To enable it go to 'Write Poetry Settings Page' (insert link) and check the box 'enable maintenace option'
+*	Enhanced maintenance mode that keeps the admin alive. To enable it go to 'WritePoetry Settings Page' (insert link) and check the box 'enable maintenace option'
 *	You can find some code examples for configuring your project in the [project-custom-functions.php](https://github.com/giacomo-secchi/write-poetry/blob/908699814132696dbccb41a1fca86bd1fc26e300/mu-plugins/project-custom-functions.php#L45) file. Typically, you would place these code snippets in your `wp-config.php` file.
 
     Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
@@ -38,7 +38,7 @@ you put the stable version, in order to eliminate any doubt.
 
 == Installation ==
 
-1. Download the latest release `write-poetry.zip` archive from the [GitHub WritePoetry Repo release page](https://github.com/WritePoetry/wordpress-plugin/releases/latest)
+1. Download the latest release `write-poetry.zip` archive from the [GitHub WritePoetry Repo release page](https://github.com/WritePoetry/writepoetry-plugin/releases/latest)
 2. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
 3. Activate the plugin through the 'Plugins' menu in WordPress
 

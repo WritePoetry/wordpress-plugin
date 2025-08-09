@@ -116,6 +116,6 @@ export default function Edit( { attributes, setAttributes } ) {
 }
 
 
-//   https://api.github.com/repos/WritePoetry/wordpress-plugin/releases/latest"
+//   https://api.github.com/repos/WritePoetry/writepoetry-plugin/releases/latest"
 //   data-api-link="html_url"
 //   data-api-text="tag_name"
