@@ -101,8 +101,8 @@ class Plugin_Config {
 		$this->plugin_url       = plugin_dir_url( dirname( __DIR__, 1 ) );
 		$this->build_path       = $this->plugin_path . 'build';
 		$this->build_url        = $this->plugin_url . 'build';
-		$this->plugin_name      = plugin_basename( dirname( __DIR__, 2 ) . '/write-poetry.php' );
-		$this->plugin_main_file = wp_normalize_path( $this->plugin_path . 'write-poetry.php' );
+		$this->plugin_name      = plugin_basename( dirname( __DIR__, 2 ) . '/writepoetry-plugin.php' );
+		$this->plugin_main_file = wp_normalize_path( $this->plugin_path . 'writepoetry-plugin.php' );
 		$this->prefix           = preg_replace( '/[^A-Za-z0-9 ]/', '', plugin_basename( $this->plugin_path ) );
 		$this->github_username  = 'WritePoetry';
 		$this->github_repo      = 'writepoetry-plugin';

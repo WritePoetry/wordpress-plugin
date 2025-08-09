@@ -60,7 +60,7 @@ php vendor/bin/phpcbf
 
 Contributors who want to make a new release, follow these steps:
 
-1. Change the plugin `version` header field in the [main plugin file](write-poetry.php) and the `Stable tag` field in the Header informations of [readme.txt](readme.txt) file following the [WordPress versioning scheme](https://make.wordpress.org/core/handbook/about/release-cycle/version-numbering/)
+1. Change the plugin `version` header field in the [main plugin file](writepoetry-plugin.php) and the `Stable tag` field in the Header informations of [readme.txt](readme.txt) file following the [WordPress versioning scheme](https://make.wordpress.org/core/handbook/about/release-cycle/version-numbering/)
 
 **N.B.: Don't forget to update the changelog with the details of the changes made in the new version.**
 

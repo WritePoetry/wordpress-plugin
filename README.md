@@ -57,8 +57,8 @@ Remember that the `pathMappings` inside `.vscode/launch.json` file should be as 
 ```json
 {
 	"pathMappings": {
-		"/var/www/html/wp-content/plugins/write-poetry": "${workspaceFolder}/",
-		"/var/www/html/wp-content/themes/blankspace": "${workspaceFolder}/themes/blankspace/",
+		"/var/www/html/wp-content/plugins/writepoetry-plugin": "${workspaceFolder}/",
+		"/var/www/html/wp-content/themes/blankspace-theme": "${workspaceFolder}/themes/blankspace/",
 		"/var/www/html/wp-content/mu-plugins": "${workspaceFolder}/mu-plugins/"
 	}
 }

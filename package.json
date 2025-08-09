@@ -11,7 +11,7 @@
 		"woocommerce",
 		"index.php",
 		"readme.txt",
-		"write-poetry.php",
+		"writepoetry-plugin.php",
 		"uninstall.php"
 	],
 	"dependencies": {
