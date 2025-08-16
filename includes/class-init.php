@@ -52,7 +52,6 @@ final class Init {
 		if ( is_admin() ) {
 			array_push(
 				$services,
-				// Base\Updater\Updater::class,
 				Pages\Admin\Settings_Page::class,
 				Pages\Admin\Custom_Media_Type::class,
 				Pages\Admin\Settings_Link::class,
