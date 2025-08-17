@@ -9,5 +9,10 @@ on:
 jobs:
   call_shared_release:
     uses: WritePoetry/create-release-composite-action/.github/workflows/release.yml@main
+    permissions:
+      contents: write
+      packages: read
+      actions: read
+    secrets: inherit
     with:
       artifacts_path: 'build'
