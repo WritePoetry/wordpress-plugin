@@ -8,6 +8,6 @@ on:
 
 jobs:
   call_shared_release:
-    uses: WritePoetry/create-release-composite-action@v1
+    uses: WritePoetry/create-release-composite-action/.github/workflows/release.yml@main
     with:
       artifacts_path: 'build'
