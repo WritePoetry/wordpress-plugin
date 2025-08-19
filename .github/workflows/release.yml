@@ -8,7 +8,7 @@ on:
 
 jobs:
   call_shared_release:
-    uses: WritePoetry/create-release-composite-action/.github/workflows/release.yml@main
+    uses: WritePoetry/reusable-workflows/.github/workflows/release.yml@main
     permissions:
       contents: write
       packages: read
