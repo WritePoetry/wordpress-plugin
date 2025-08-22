@@ -27,15 +27,18 @@ class Testimonial extends Base_Controller {
 	 * @return void
 	 */
 	public function register() {
-		if ( apply_filters( "writepoetry_plugin_remove_testimonial_link", false ) ) {
+		if ( apply_filters( 'writepoetry_remove_testimonial_link', false ) ) {
 			add_filter( 'render_block_core/shortcode', array( $this, 'remove_dom_testimonial_link' ), 10, 2 );
 		}
 
 		// Force the Testimonials CPT settings to remain visible.
-		// https://jetpack.com/support/custom-content-types/#block-themes-and-custom-content-types
-		add_filter( 'classic_theme_helper_should_display_testimonials', function( $should_display ) {
-			return true;
-		} );
+		// https://jetpack.com/support/custom-content-types/#block-themes-and-custom-content-types.
+		add_filter(
+			'classic_theme_helper_should_display_testimonials',
+			function ( $should_display ) {
+				return true;
+			}
+		);
 	}
 
 	/**
@@ -49,19 +52,19 @@ class Testimonial extends Base_Controller {
 	 * @return string The modified block content with <a> tags removed.
 	 */
 	public function remove_dom_testimonial_link( $block_content, $block ) {
-		// Verify if block content is testimonial
-		if ( strpos( $block_content, 'jetpack-testimonial-shortcode') !== false ) {
+		// Verify if block content is testimonial.
+		if ( strpos( $block_content, 'jetpack-testimonial-shortcode' ) !== false ) {
 			// Create new object DOMDocument.
 			$dom = new \DOMDocument();
 			@$dom->loadHTML( mb_convert_encoding( $block_content, 'HTML-ENTITIES', 'UTF-8' ), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
 
-			// Find all span with css class "testimonial-entry-title"
+			// Find all span with css class "testimonial-entry-title".
 			$xpath = new \DOMXPath( $dom );
 			$spans = $xpath->query( '//span[contains(@class, "testimonial-entry-title")]' );
 
 			foreach ( $spans as $span ) {
 				// Find all tag with <a> inside the span.
-				$links = $span->getElementsByTagName('a' );
+				$links = $span->getElementsByTagName( 'a' );
 				while ( $links->length > 0 ) {
 					$link = $links->item( 0 );
 
@@ -71,7 +74,7 @@ class Testimonial extends Base_Controller {
 				}
 			}
 
-			// Find all <a> tags with CSS class "testimonial-featured-image"
+			// Find all <a> tags with CSS class "testimonial-featured-image".
 			$image_links = $xpath->query( '//a[contains(@class, "testimonial-featured-image")]' );
 
 			foreach ( $image_links as $image_link ) {
@@ -88,7 +91,6 @@ class Testimonial extends Base_Controller {
 			// Save modified HTML.
 			$block_content = $dom->saveHTML();
 		}
-
 
 		return $block_content;
 	}

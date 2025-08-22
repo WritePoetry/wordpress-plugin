@@ -27,35 +27,35 @@ class Quantity_Layout extends WooCommerce_Controller {
 		$max_quantity = 7;
 
 		// product max quantity configurations.
-		if ( get_option( "{$this->prefix}_product_max_quantity" ) ) {
-			$max_quantity = get_option( "{$this->prefix}_product_max_quantity" );
+		if ( get_option( 'writepoetry_product_max_quantity' ) ) {
+			$max_quantity = get_option( 'writepoetry_product_max_quantity' );
 		}
 
-		if ( get_option( "{$this->prefix}_product_min_quantity" ) ) {
-			$min_quantity = get_option( "{$this->prefix}_product_min_quantity" );
+		if ( get_option( 'writepoetry_product_min_quantity' ) ) {
+			$min_quantity = get_option( 'writepoetry_product_min_quantity' );
 		}
 
 		// product quantity selector configurations.
 
 		// this filter prevent to override the `quantity-input.php` template.
 		add_filter(
-			"{$this->prefix}_exclude_woocommerce_template",
+			'writepoetry_exclude_woocommerce_template',
 			function ( $templates ) {
 				$templates[] = 'global/quantity-input.php';
 				return $templates;
 			}
 		);
 
-		if ( 'input' === get_option( "{$this->prefix}_product_quantity_layout" ) ) {
+		if ( 'input' === get_option( 'writepoetry_product_quantity_layout' ) ) {
 			return false;
 		}
 
 		// Set product quantity to one item at a time if added to cart.
-		if ( 'hidden' === get_option( "{$this->prefix}_product_quantity_layout" ) ) {
+		if ( 'hidden' === get_option( 'writepoetry_product_quantity_layout' ) ) {
 			$this->change_quantity_input( $min_quantity );
 		}
 
-		if ( 'buttons' === get_option( "{$this->prefix}_product_quantity_layout" ) ) {
+		if ( 'buttons' === get_option( 'writepoetry_product_quantity_layout' ) ) {
 			add_action( 'woocommerce_before_quantity_input_field', array( $this, 'display_quantity_minus' ) );
 			add_action( 'woocommerce_after_quantity_input_field', array( $this, 'display_quantity_plus' ) );
 			add_action( 'wp_footer', array( $this, 'add_cart_quantity_plus_minus' ) );
@@ -64,12 +64,12 @@ class Quantity_Layout extends WooCommerce_Controller {
 
 		}
 
-		if ( 'select' === get_option( "{$this->prefix}_product_quantity_layout" ) ) {
+		if ( 'select' === get_option( 'writepoetry_product_quantity_layout' ) ) {
 			$this->change_quantity_input( $max_quantity, $min_quantity );
 
 			// this readd quantity input to the filter.
 			add_filter(
-				"{$this->prefix}_exclude_woocommerce_template",
+				'writepoetry_exclude_woocommerce_template',
 				function ( $templates ) {
 					return array_filter( $templates, fn( $template ) => strpos( $template, 'global/quantity-input.php' ) === false );
 				}
@@ -78,11 +78,11 @@ class Quantity_Layout extends WooCommerce_Controller {
 		}
 
 		// product quantity input configurations.
-		if ( get_option( "{$this->prefix}_quantity_input_step" ) ) {
+		if ( get_option( 'writepoetry_quantity_input_step' ) ) {
 			add_filter(
 				'woocommerce_quantity_input_step',
 				function () {
-					return get_option( "{$this->prefix}_quantity_input_step" );
+					return get_option( 'writepoetry_quantity_input_step' );
 				},
 				10,
 				2

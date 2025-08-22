@@ -26,9 +26,9 @@ class Product_Additional_Infos extends WooCommerce_Controller {
 	public function register() {
 
 		// Additional informations.
-		if ( 'tabs' === get_option( "{$this->prefix}_product_infos_layout" ) ) {
+		if ( 'tabs' === get_option( 'writepoetry_product_infos_layout' ) ) {
 			add_filter(
-				"{$this->prefix}_exclude_woocommerce_template",
+				'writepoetry_exclude_woocommerce_template',
 				function ( $templates ) {
 					$templates[] = 'single-product/tabs/tabs.php';
 					return $templates;
@@ -36,7 +36,7 @@ class Product_Additional_Infos extends WooCommerce_Controller {
 			);
 		}
 
-		if ( 'accordion' === get_option( "{$this->prefix}_product_infos_layout" ) ) {
+		if ( 'accordion' === get_option( 'writepoetry_product_infos_layout' ) ) {
 			add_filter(
 				'wp_enqueue_scripts',
 				function () {

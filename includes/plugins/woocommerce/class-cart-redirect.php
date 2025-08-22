@@ -27,7 +27,7 @@ class Cart_Redirect extends WooCommerce_Controller {
 	 */
 	public function register() {
 		// redirect checkout.
-		if ( '' === get_option( "{$this->prefix}_redirect_after_add" ) ) {
+		if ( '' === get_option( 'writepoetry_redirect_after_add' ) ) {
 			return false;
 		}
 
@@ -51,7 +51,7 @@ class Cart_Redirect extends WooCommerce_Controller {
 	public function skip_cart_redirect_checkout() {
 		$this->disable_ajax_cart();
 
-		if ( 'cart' === get_option( "{$this->prefix}_redirect_after_add" ) ) {
+		if ( 'cart' === get_option( 'writepoetry_redirect_after_add' ) ) {
 			return wc_get_cart_url();
 		}
 
@@ -85,7 +85,7 @@ class Cart_Redirect extends WooCommerce_Controller {
 	 */
 	public function product_add_to_cart_text( $text, $product ) {
 		$t = $text;
-		return $product->is_purchasable() && $product->is_in_stock() || $product->is_type( 'grouped' ) ? __( 'Buy now', 'write-poetry' ) : __( 'Read more', 'write-poetry' );
+		return ( $product->is_purchasable() && $product->is_in_stock() || $product->is_type( 'grouped' ) ) ? __( 'Buy now', 'write-poetry' ) : __( 'Read more', 'write-poetry' );
 	}
 
 	/**

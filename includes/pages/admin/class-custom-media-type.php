@@ -73,7 +73,7 @@ class Custom_Media_Type extends Admin_Controller {
 	public function wp_setting_init() {
 		// register a new section in the "reading" page.
 		add_settings_section(
-			"{$this->prefix}_supported_media_types_section",
+			'writepoetry_supported_media_types_section',
 			__( 'Supported media types', 'write-poetry' ),
 			array( $this, 'supported_media_types_section_cb' ),
 			'media'

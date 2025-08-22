@@ -90,7 +90,7 @@ class WooCommerce_Controller extends Base_Controller {
 		$plugin_path = untrailingslashit( $this->plugin_path ) . '/woocommerce/';
 
 		// Apply filter to exclude specific template.
-		$excluded_templates = apply_filters( "{$this->prefix}_exclude_woocommerce_template", array() );
+		$excluded_templates = apply_filters( 'writepoetry_exclude_woocommerce_template', array() );
 
 		foreach ( $excluded_templates as $excluded_template ) {
 			if ( $template_name === $excluded_template ) {

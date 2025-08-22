@@ -15,7 +15,7 @@ namespace WritePoetry;
 use WritePoetry\Api\Plugin_Config;
 use WritePoetry\Base\Base_Controller;
 
-include_once ABSPATH . 'wp-admin/includes/plugin.php';
+require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
 
 /**
@@ -43,10 +43,10 @@ final class Init {
 			FSE\Theme\Assets::class,
 			Pages\Admin\Login_Screen::class,
 
-			// @phpcs:disable Squiz.PHP.CommentedOutCode.Found, Squiz.Commenting.InlineComment.InvalidEndChar
+            // @phpcs:disable Squiz.PHP.CommentedOutCode.Found, Squiz.Commenting.InlineComment.InvalidEndChar
 			// Base\Development\Example::class,
 			// Plugins\Gtm4wp::class,
-			// @phpcs:enable
+            // @phpcs:enable
 		);
 
 		if ( is_admin() ) {
@@ -59,36 +59,40 @@ final class Init {
 			);
 		}
 
-		self::add_plugin_service( $services,
+		self::add_plugin_service(
+			$services,
 			'woocommerce/woocommerce.php',
 			array(
 				Plugins\WooCommerce\Cart_Redirect::class,
 				Plugins\WooCommerce\Product_Zoom::class,
 				Plugins\WooCommerce\Product_Additional_Infos::class,
 				Plugins\WooCommerce\Quantity_Layout::class,
-				Plugins\WooCommerce\WooCommerce_Controller::class
+				Plugins\WooCommerce\WooCommerce_Controller::class,
 			)
 		);
 
-		self::add_plugin_service( $services,
+		self::add_plugin_service(
+			$services,
 			'jetpack/jetpack.php',
 			array(
 				Plugins\Jetpack\Portfolio::class,
-				Plugins\Jetpack\Testimonial::class
+				Plugins\Jetpack\Testimonial::class,
 			)
 		);
 
-		self::add_plugin_service( $services,
+		self::add_plugin_service(
+			$services,
 			'wordpress-seo/wp-seo.php',
 			array(
-				Plugins\Yoast\Sitemap::class
+				Plugins\Yoast\Sitemap::class,
 			)
 		);
 
-		self::add_plugin_service( $services,
+		self::add_plugin_service(
+			$services,
 			'translatepress-multilingual/index.php',
 			array(
-				Plugins\Translatepress\Translatepress::class
+				Plugins\Translatepress\Translatepress::class,
 			)
 		);
 
@@ -125,9 +129,9 @@ final class Init {
 	/**
 	 * Add a service if the plugin is active
 	 *
-	 * @param array  &$services     The array of services to modify.
-	 * @param string $plugin        The plugin to check.
-	 * @param string $service_class The service class to add.
+	 * @param array  &$services         The array of services to modify.
+	 * @param string $plugin            The plugin to check.
+	 * @param string $service_classes   The service classes to add.
 	 */
 	public static function add_plugin_service( &$services, $plugin, $service_classes ) {
 		if ( \is_plugin_active( $plugin ) ) {

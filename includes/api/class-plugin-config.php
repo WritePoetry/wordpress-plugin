@@ -103,7 +103,6 @@ class Plugin_Config {
 		$this->build_url        = $this->plugin_url . 'build';
 		$this->plugin_name      = plugin_basename( dirname( __DIR__, 2 ) . '/writepoetry-plugin.php' );
 		$this->plugin_main_file = wp_normalize_path( $this->plugin_path . 'writepoetry-plugin.php' );
-		$this->prefix           = preg_replace( '/[^A-Za-z0-9 ]/', '', plugin_basename( $this->plugin_path ) );
 	}
 
 	/**

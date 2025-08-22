@@ -29,7 +29,7 @@ class Utils extends Base_Controller {
 			return false;
 		}
 
-		if ( apply_filters( "{$this->prefix}_remove_query_strings", false ) ) {
+		if ( apply_filters( 'writepoetry_remove_query_strings', false ) ) {
 			add_filter( 'style_loader_src', array( $this, 'remove_query_string_from_static_files' ), 10, 2 );
 			add_filter( 'script_loader_src', array( $this, 'remove_query_string_from_static_files' ), 10, 2 );
 		}

@@ -35,7 +35,7 @@ define( 'GTM4WP_HARDCODED_GTM_ENV_PREVIEW', '' );
 add_filter( 'writepoetry_remove_query_strings', '__return_true' );
 
 // If enabled, this will remove the link to the single testimonial page in Jetpack testimonials.
-add_filter( 'writepoetry_plugin_remove_testimonial_link', '__return_true' );
+add_filter( 'writepoetry_remove_testimonial_link', '__return_true' );
 
 // Enable maintenance mode.
 add_filter(
@@ -133,7 +133,7 @@ add_filter(
 );
 
 add_filter(
-	'writepoetry_plugin_remove_trp_end_slash_from_links',
+	'writepoetry_remove_end_slash_from_links',
 	function () {
 		$string = array(
 			'example-url',
@@ -158,11 +158,11 @@ add_filter(
 add_filter(
 	'writepoetry_exclude_posts_from_xml_sitemaps',
 	function () {
-		return array( 
+		return array(
 			'jetpack-portfolio',
 			'test-cpt',
-			'another-cpt'
-			);
+			'another-cpt',
+		);
 	}
 );
 
@@ -249,9 +249,9 @@ add_filter(
 	'writepoetry_add_custom_fields_to_post',
 	function () {
 		$meta_keys = array(
-			'test_meta_key' => array(
-				'type'         => 'boolean',
-				'default'      => false,
+			'test_meta_key'  => array(
+				'type'    => 'boolean',
+				'default' => false,
 			),
 			'test_meta_key2' => array(
 				'show_in_rest' => false,

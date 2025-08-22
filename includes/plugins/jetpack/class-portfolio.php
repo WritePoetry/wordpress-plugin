@@ -42,7 +42,7 @@ class Portfolio extends Base_Controller {
 				if ( ! post_type_exists( self::CUSTOM_POST_TYPE ) ) {
 					return;
 				}
- 				add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_assets' ) );
+				add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_assets' ) );
 				// Add meta box to ensure backward compatibility with the Classic Editor.
 				add_action( 'add_meta_boxes', array( $this, 'add_portfolio_meta_box' ) );
 
@@ -51,10 +51,13 @@ class Portfolio extends Base_Controller {
 		);
 
 		// Force the Portfolios CPT settings to remain visible.
-		// https://jetpack.com/support/custom-content-types/#block-themes-and-custom-content-types
-		add_filter( 'classic_theme_helper_should_display_portfolios', function( $should_display ) {
-			return true;
-		} );
+		// https://jetpack.com/support/custom-content-types/#block-themes-and-custom-content-types.
+		add_filter(
+			'classic_theme_helper_should_display_portfolios',
+			function ( $should_display ) {
+				return true;
+			}
+		);
 	}
 
 
@@ -74,7 +77,7 @@ class Portfolio extends Base_Controller {
 		);
 
 		wp_enqueue_script(
-			"writepoetry-gutenberg-sidebar",
+			'writepoetry-gutenberg-sidebar',
 			sprintf( '%s/%s.js', $this->build_url, $file_name ),
 			$asset_file['dependencies'],
 			$asset_file['version'],
@@ -89,20 +92,20 @@ class Portfolio extends Base_Controller {
 	 */
 	public function register_portfolio_meta() {
 		$default_args = array(
-        	'type'			=> 'string',
-			'default'       => 'project_',
+			'type'    => 'string',
+			'default' => 'project_',
 		);
 
 		$meta_fields = array(
-			"writepoetry_project_url" =>  $default_args,
-			"writepoetry_project_year" => array(
-				'type' => 'number',
-				'default' => date( 'Y' ),
-				'description' =>  'Year of the project',
+			'writepoetry_project_url'       => $default_args,
+			'writepoetry_project_year'      => array(
+				'type'        => 'number',
+				'default'     => date( 'Y' ),
+				'description' => 'Year of the project',
 			),
-			"writepoetry_project_client" =>  $default_args,
-			"writepoetry_project_expertise" =>  $default_args,
-			"writepoetry_project_industry" =>  $default_args
+			'writepoetry_project_client'    => $default_args,
+			'writepoetry_project_expertise' => $default_args,
+			'writepoetry_project_industry'  => $default_args,
 		);
 
 		// Register custom fields for the portfolio post type.
@@ -118,9 +121,9 @@ class Portfolio extends Base_Controller {
 	 */
 	public function add_portfolio_meta_box() {
 		add_meta_box(
-			"writepoetry_post_options_metabox",
+			'writepoetry_post_options_metabox',
 			'Post Options',
-			"writepoetry_post_options_metabox_html",
+			'writepoetry_post_options_metabox_html',
 			self::CUSTOM_POST_TYPE,
 			'normal',
 			'default',

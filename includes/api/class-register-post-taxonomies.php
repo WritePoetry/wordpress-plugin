@@ -41,7 +41,7 @@ class Register_Post_Taxonomies extends Base_Controller {
 			'show_in_nav_menus' => true,
 		);
 
-		foreach ( apply_filters( "{$this->prefix}_add_custom_taxonomies", array() ) as $taxonomy => $args ) {
+		foreach ( apply_filters( 'writepoetry_add_custom_taxonomies', array() ) as $taxonomy => $args ) {
 			if ( taxonomy_exists( $taxonomy ) ) {
 				continue;
 			}

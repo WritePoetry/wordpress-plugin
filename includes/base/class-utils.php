@@ -51,7 +51,7 @@ class Utils extends Base_Controller {
 	 */
 	public function add_query_vars( $qvars ) {
 
-		foreach ( apply_filters( "writepoetry_query_vars", array() ) as $qv ) {
+		foreach ( apply_filters( 'writepoetry_query_vars', array() ) as $qv ) {
 			$qvars[] = $qv;
 		}
 
@@ -77,8 +77,8 @@ class Utils extends Base_Controller {
 	 */
 	public function redirect_single_posts_to_not_found() {
 		global $wp_query;
-		foreach ( apply_filters( "writepoetry_redirect_to_not_found", array() ) as $post ) {
-			if ( is_singular( $post ) ) {				
+		foreach ( apply_filters( 'writepoetry_redirect_to_not_found', array() ) as $post ) {
+			if ( is_singular( $post ) ) {
 				$wp_query->set_404();
 				status_header( 404 );
 				get_template_part( '404' );
@@ -92,11 +92,11 @@ class Utils extends Base_Controller {
 	 * @return array The IDs of posts to exclude.
 	 */
 	public function exclude_posts_from_xml_sitemaps() {
-		foreach ( apply_filters( "writepoetry_exclude_posts_from_xml_sitemaps", array() ) as $post ) {
+		foreach ( apply_filters( 'writepoetry_exclude_posts_from_xml_sitemaps', array() ) as $post ) {
 			$args = array(
 				'post_type'      => $post,
 				'posts_per_page' => -1,
-				'fields'         => 'ids', // Only get post IDs
+				'fields'         => 'ids', // Only get post IDs.
 			);
 
 			$post_ids = get_posts( $args );

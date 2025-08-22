@@ -43,12 +43,12 @@ class Translatepress extends Base_Controller {
 	 */
 	public function remove_end_slash_from_links( $new_url, $url, $language, $abs_home, $lang_from_url_string, $lang_url_slug ) {
 		// Default URL patterns to check.
-		$default_patterns  = array(
+		$default_patterns = array(
 			'sitemap',
 		);
 
 		// Allow developers to add or modify URL patterns via a filter.
-		$url_patterns = array_merge( $default_patterns, apply_filters( 'writepoetry_plugin_remove_end_slash_from_links', array() ) );
+		$url_patterns = array_merge( $default_patterns, apply_filters( 'writepoetry_remove_end_slash_from_links', array() ) );
 
 		// Check each pattern against the new URL.
 		foreach ( $url_patterns  as $pattern ) {
@@ -63,5 +63,4 @@ class Translatepress extends Base_Controller {
 		// Return the original URL if no patterns match.
 		return $new_url;
 	}
-
 }

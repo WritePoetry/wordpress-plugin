@@ -28,7 +28,7 @@ class Product_Zoom extends WooCommerce_Controller {
 	public function register() {
 
 		// Check option for product zoom.
-		if ( 'no' === get_option( "{$this->prefix}_product_zoom" ) ) {
+		if ( 'no' === get_option( 'writepoetry_product_zoom' ) ) {
 			$this->disable_product_zoom();
 		}
 	}

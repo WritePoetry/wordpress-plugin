@@ -39,7 +39,7 @@ class Remove_Unwanted_Features extends Base_Controller {
 	public function turn_off_stuff() {
 
 		$hook_names = apply_filters(
-			"{$this->prefix}_disable_features",
+			'writepoetry_disable_features',
 			array(
 				'big_image_size_threshold',  // https://make.wordpress.org/core/2019/10/09/introducing-handling-of-big-images-in-wordpress-5-3/.
 			)

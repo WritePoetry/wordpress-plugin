@@ -11,7 +11,7 @@ use phpmock\phpunit\PHPMock;
 /**
  * Get a plugin option from the WordPress database.
  *
- * @param string $name
+ * @param string $name Option name without prefix.
  *
  * @return mixed
  */
@@ -34,7 +34,7 @@ class WritePoetryTest extends \WP_UnitTestCase {
 		parent::set_up();
 
 		// Mock that we're in WP Admin context.
-		// See https://wordpress.stackexchange.com/questions/207358/unit-testing-in-the-wordpress-backend-is-admin-is-true
+		// See https://wordpress.stackexchange.com/questions/207358/unit-testing-in-the-wordpress-backend-is-admin-is-true.
 		set_current_screen( 'edit-post' );
 
 		// $this->write_poetry = WritePoetry\Init::register_services();

@@ -89,7 +89,7 @@ class WooCommerce_Page extends Admin_Controller {
 						// @phpcs:disable Squiz.PHP.CommentedOutCode.Found
 						// 'desc_tip' => $regeneration_aborted_warning,
 						// @phpcs:enable
-						'id'                => "{$this->prefix}_redirect_after_add",
+						'id'                => 'writepoetry_redirect_after_add',
 						'type'              => 'select',
 						'default'           => '',
 						'css'               => 'min-width:300px;',
@@ -103,7 +103,7 @@ class WooCommerce_Page extends Admin_Controller {
 							// 'product-checkout'       => __( 'Redirect to checkout page (only from single product page)', 'write-poetry' ),
 							// @phpcs:enable
 						), // array of options for select/multiselects only.
-						'custom_attributes' => $this->setCustomAttribute( "{$this->prefix}_redirect_after_add" ),
+						'custom_attributes' => $this->setCustomAttribute( 'writepoetry_redirect_after_add' ),
 					);
 				}
 				if ( isset( $setting['id'] ) && 'woocommerce_enable_ajax_add_to_cart' === $setting['id'] ) {
@@ -132,10 +132,10 @@ class WooCommerce_Page extends Admin_Controller {
 			// Add quantity layout field option.
 			$settings_appearance[] = array(
 				'name'              => __( 'Product quantity selector', 'write-poetry' ),
-				'id'                => "{$this->prefix}_product_quantity_layout",
+				'id'                => 'writepoetry_product_quantity_layout',
 				'default'           => 'input',
 				'type'              => 'select',
-				'value'             => get_option( "{$this->prefix}_product_quantity_layout" ),
+				'value'             => get_option( 'writepoetry_product_quantity_layout' ),
 				'desc'              => __( 'Choose the layout of quantity selector on the product page', 'write-poetry' ),
 				'options'           => array(
 					'hidden'  => __( 'Hidden (Product quantity will be always forced to one item)', 'write-poetry' ),
@@ -143,55 +143,55 @@ class WooCommerce_Page extends Admin_Controller {
 					'select'  => __( 'Select', 'write-poetry' ),
 					'buttons' => __( 'Buttons', 'write-poetry' ),
 				), // array of options for select/multiselects only.
-				'custom_attributes' => $this->setCustomAttribute( "{$this->prefix}_product_quantity_layout" ),
+				'custom_attributes' => $this->setCustomAttribute( 'writepoetry_product_quantity_layout' ),
 
 			);
 
 			// Add single product checkbox option.
 			$settings_appearance[] = array(
-				'id'                => "{$this->prefix}_product_max_quantity",
+				'id'                => 'writepoetry_product_max_quantity',
 				'type'              => 'number',
 				'css'               => 'width:80px;',
 				'desc'              => __( 'Max quantity input', 'write-poetry' ),
-				'custom_attributes' => $this->setCustomAttribute( "{$this->prefix}_product_max_quantity" ),
+				'custom_attributes' => $this->setCustomAttribute( 'writepoetry_product_max_quantity' ),
 			);
 
 			// Add single product minal quantity option.
 			$settings_appearance[] = array(
-				'id'                => "{$this->prefix}_product_min_quantity",
+				'id'                => 'writepoetry_product_min_quantity',
 				'type'              => 'number',
 				'css'               => 'width:80px;',
 				'desc'              => __( 'Min quantity input', 'write-poetry' ),
-				'custom_attributes' => $this->setCustomAttribute( "{$this->prefix}_product_min_quantity" ),
+				'custom_attributes' => $this->setCustomAttribute( 'writepoetry_product_min_quantity' ),
 			);
 
 			// Add single product checkbox option quantity input steps values.
 			$settings_appearance[] = array(
 				'desc_tip'          => __( 'Adjust the quantity input steps values', 'write-poetry' ),
-				'id'                => "{$this->prefix}_quantity_input_step",
+				'id'                => 'writepoetry_quantity_input_step',
 				'type'              => 'number',
 				'css'               => 'width:80px;',
 				'desc'              => __( 'Product quantity input steps', 'write-poetry' ),
-				'custom_attributes' => $this->setCustomAttribute( "{$this->prefix}_quantity_input_step" ),
+				'custom_attributes' => $this->setCustomAttribute( 'writepoetry_quantity_input_step' ),
 			);
 
 			// Add product zoom checkbox option.
 			$settings_appearance[] = array(
 				'name'              => __( 'Zoom behaviour', 'write-poetry' ),
 				'desc_tip'          => __( 'This will enable or disable product image zoom on single product page', 'write-poetry' ),
-				'id'                => "{$this->prefix}_product_zoom",
+				'id'                => 'writepoetry_product_zoom',
 				'type'              => 'checkbox',
 				'default'           => 'yes',
-				'value'             => get_option( "{$this->prefix}_product_zoom" ),
+				'value'             => get_option( 'writepoetry_product_zoom' ),
 				'css'               => 'min-width:300px;',
 				'desc'              => __( 'Enable Product Zoom', 'write-poetry' ),
-				'custom_attributes' => $this->setCustomAttribute( "{$this->prefix}_product_zoom" ),
+				'custom_attributes' => $this->setCustomAttribute( 'writepoetry_product_zoom' ),
 			);
 
 			// Add additional info layout field option.
 			$settings_appearance[] = array(
 				'name'              => __( 'Additional infos layout', 'write-poetry' ),
-				'id'                => "{$this->prefix}_product_infos_layout",
+				'id'                => 'writepoetry_product_infos_layout',
 				'type'              => 'select',
 				'desc'              => __( 'Choose the layout of additional informations box with this option!', 'write-poetry' ),
 				'default'           => 'tabs',
@@ -200,7 +200,7 @@ class WooCommerce_Page extends Admin_Controller {
 					'list'      => 'List',
 					'accordion' => 'Accordion',
 				), // array of options for select/multiselects only.
-				'custom_attributes' => $this->setCustomAttribute( "{$this->prefix}_product_infos_layout" ),
+				'custom_attributes' => $this->setCustomAttribute( 'writepoetry_product_infos_layout' ),
 			);
 
 			$settings_appearance[] = array(

@@ -147,6 +147,4 @@ class Assets extends Base_Controller {
 			}
 		}
 	}
-
-
 }

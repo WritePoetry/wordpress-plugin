@@ -37,13 +37,13 @@ class Register_Custom_Fields extends Base_Controller {
 	 * @return void
 	 */
 	public function register_post_meta() {
-    	// Get all post types.
+		// Get all post types.
 		$post_types = get_post_types( array(), 'names' );
 
 		// Loop through each post type and register custom fields.
 		foreach ( $post_types as $post_type ) {
 			$this->register_custom_field(
-				apply_filters( "{$this->prefix}_add_custom_fields_to_{$post_type}", array() ),
+				apply_filters( "writepoetry_add_custom_fields_to_{$post_type}", array() ),
 				$post_type
 			);
 		}
@@ -59,22 +59,22 @@ class Register_Custom_Fields extends Base_Controller {
 
 		// Default Post Type Arguments.
 		$default_args = array(
-			'show_in_rest'	=> true,
-        	'single'		=> true,
-        	'type'			=> 'string',
-			'default'		=> '',
+			'show_in_rest' => true,
+			'single'       => true,
+			'type'         => 'string',
+			'default'      => '',
 		);
 
 		// Loop through each custom field and register it.
 		foreach ( $custom_fields as $custom_field => $args ) {
 			if ( ! post_type_exists( $post_type ) ) {
-				continue; // Use continue instead of return to avoid breaking the entire function
+				continue; // Use continue instead of return to avoid breaking the entire function.
 			}
 
-			// Handle simple array case
+			// Handle simple array case.
 			if ( is_int( $custom_field ) ) {
 				$custom_field = $args;
-				$args = array();
+				$args         = array();
 			}
 
 			// Merge default arguments with specific arguments.

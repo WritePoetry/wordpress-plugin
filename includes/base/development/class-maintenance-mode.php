@@ -56,12 +56,12 @@ class Maintenance_Mode extends Base_Controller {
 		if (
 			is_user_logged_in() ||
 			is_login() ||
-			in_array( $current_page, apply_filters( "{$this->prefix}_maintenance_excluded_pages", array() ), true )
+			in_array( $current_page, apply_filters( 'writepoetry_maintenance_excluded_pages', array() ), true )
 		) {
 			return;
 		}
 
-		if ( '1' === get_option( "{$this->prefix}_maintenance_mode" ) ) {
+		if ( '1' === get_option( 'writepoetry_maintenance_mode' ) ) {
 			$this->wp_maintenance();
 		}
 	}

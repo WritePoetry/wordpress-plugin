@@ -41,7 +41,7 @@ class Shortcode extends Base_Controller {
 	 */
 	public function support_gutenberg_shortcode( $block_content, $block ) {
 
-		if ( isset( $block['blockName'] ) && $block['blockName'] === 'core/shortcode' ) {
+		if ( isset( $block['blockName'] ) && 'core/shortcode' === $block['blockName'] ) {
 			$block_content = do_shortcode( $block['innerHTML'] );
 		}
 

@@ -48,8 +48,8 @@ class Settings_Page extends Admin_Controller implements Settings_Interface {
 	public function __construct() {
 
 		parent::__construct();
-		$this->page_slug    = "{$this->prefix}-settings";
-		$this->option_group = "{$this->prefix}-settings-group";
+		$this->page_slug    = 'writepoetry-settings';
+		$this->option_group = 'writepoetry-settings-group';
 	}
 
 	/**
@@ -148,20 +148,20 @@ class Settings_Page extends Admin_Controller implements Settings_Interface {
 
 		$fields = array(
 			array(
-				'id'       => "{$this->prefix}_maintenance_mode",
+				'id'       => 'writepoetry_maintenance_mode',
 				'title'    => __( 'Enable maintenance for visitors only', 'write-poetry' ),
 				'callback' => 'checkboxInputTemplate',
 				'section'  => 'setting_section_maintenance_mode',
 			),
 			array(
-				'id'       => "{$this->prefix}_maintenance_mode_excluded_ip",
+				'id'       => 'writepoetry_maintenance_mode_excluded_ip',
 				'title'    => __( 'Exclude following IP addresses from Maintenance Mode', 'write-poetry' ),
 				'callback' => 'textInputTemplate',
 				'section'  => 'setting_section_maintenance_mode',
 				'sanitize' => 'number',
 			),
 			array(
-				'id'       => "{$this->prefix}_custom_login",
+				'id'       => 'writepoetry_custom_login',
 				'title'    => __( 'Enable custom login page', 'write-poetry' ),
 				'callback' => 'checkboxInputTemplate',
 				'section'  => 'setting_section_custom_login',
@@ -188,7 +188,7 @@ class Settings_Page extends Admin_Controller implements Settings_Interface {
 				'default'           => 1,
 			);
 
-			// Register a new setting for "{$this->prefix}-settings-group" page.
+			// Register a new setting for "writepoetry-settings-group" page.
 			register_setting(
 				$option_group,
 				$option_name,
