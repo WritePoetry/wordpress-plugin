@@ -37,6 +37,7 @@ final class Init {
 			Api\Register_Custom_Fields::class,
 			Base\Development\Maintenance_Mode::class,
 			Base\Development\Utils::class,
+			Base\Register_Theme_Directories::class,
 			Base\Utils::class,
 			FSE\Blocks::class,
 			FSE\Shortcode::class,
