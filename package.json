@@ -16,15 +16,15 @@
 	],
 	"dependencies": {
 		"@10up/block-components": "^1.21.4",
-		"@wordpress/api-fetch": "^7.31.0",
-		"@wordpress/components": "^30.4.0",
-		"@wordpress/core-data": "^7.31.0",
-		"@wordpress/data": "^10.31.0",
-		"@wordpress/date": "^5.31.0",
-		"@wordpress/edit-post": "^8.31.0",
-		"@wordpress/i18n": "^6.4.0",
-		"@wordpress/icons": "^10.31.0",
-		"@wordpress/plugins": "^7.31.0",
+		"@wordpress/api-fetch": "^7.32.0",
+		"@wordpress/components": "^30.5.0",
+		"@wordpress/core-data": "^7.32.0",
+		"@wordpress/data": "^10.32.0",
+		"@wordpress/date": "^5.32.0",
+		"@wordpress/edit-post": "^8.32.0",
+		"@wordpress/i18n": "^6.5.0",
+		"@wordpress/icons": "^10.32.0",
+		"@wordpress/plugins": "^7.32.0",
 		"@writepoetry/webpack-utils": "^1.0.1",
 		"animate.css": "^4.1.1",
 		"classnames": "^2.5.1",
@@ -32,7 +32,7 @@
 	},
 	"devDependencies": {
 		"@wordpress/env": "^10.31.0",
-		"@wordpress/scripts": "^30.24.0"
+		"@wordpress/scripts": "^30.25.0"
 	},
 	"prettier": "@wordpress/prettier-config",
 	"scripts": {
