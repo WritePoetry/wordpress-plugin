@@ -5,11 +5,14 @@
 // Import the original config from the @wordpress/scripts package.
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 
+const { getAllAssets } = require( '@writepoetry/webpack-utils' );
+const path = require( 'path' );
+
+
 module.exports = {
 	...defaultConfig,
 	entry: {
-		...defaultConfig.entry,
-		'plugin-jetpack': `./src/plugins/jetpack`,
-		popup: `./src/extensions/buttons/index.js`,
+		...defaultConfig.entry(),
+		...getAllAssets( { excludeDirs: ['packages'] } )
 	},
 };
