@@ -32,7 +32,8 @@
 	},
 	"devDependencies": {
 		"@wordpress/env": "^10.31.0",
-		"@wordpress/scripts": "^30.25.0"
+		"@wordpress/scripts": "^30.25.0",
+		"@writepoetry/webpack-utils": "^1.0.3"
 	},
 	"prettier": "@wordpress/prettier-config",
 	"scripts": {
