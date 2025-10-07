@@ -8,11 +8,10 @@ const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 const { getAllAssets } = require( '@writepoetry/webpack-utils' );
 const path = require( 'path' );
 
-
 module.exports = {
 	...defaultConfig,
 	entry: {
-		...defaultConfig.entry(),
+		...defaultConfig.entry,
 		...getAllAssets( { excludeDirs: ['packages'] } )
 	},
 };
